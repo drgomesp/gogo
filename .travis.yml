@@ -1,19 +1,23 @@
 language: go
 sudo: false
+
 env:
   global:
-    secure: PQxuje1hhiHgSR0BEOVZLRfzhqHz18rk9fAI7JSkp6bfWVhMe11IyCl+7Ym7kv5FgXxzX3EZ4x5r7of9UnsrmAYZ7KwqdlrTViXZdcMW0A9SGTfqVr6U+LId0rFvoiI4VaESopW2bC5EE45qeMO+DVyPPmukejNjqzboqCRD1xtV6Xk2Dqo7hMy6lBq85tKPXCPIrHTCb4gUQf5S78YqjyAnRLJxAo1CRlcHEa8DsPQvlepHrxSciIQwmxMFAMZ0BnJp8xn/RDwxyTbeU5LNLsEo0ZVsif44l9lrD4YQHM9832bTpbKEb35JCJWVZmhsklYYY6I+/FDZrzHf8jen9EYJIdUwerlwymG7DQPnEqi6ftf1kfLpnhmMjLQucvrrV6/tVs6vm4PhUm5Ezwv/pOJpOlct0aU65W/AlZ7agUmTEpdhROyifGLIs0N3o2iYLhd8Sqba0uoBIf4U+hlnE0yQVNMDICyStndRHZ59tm0OmcBrRp5WNFfyVy/3rJf7N++cu3cuhnYqLVZlig8gzzwUk8FDwC+Lbpwh9in2DOemo73crUHl1B+O7n3VS01Fnmql5++WXEaPdMpPpO0ZqDotCehS+hBe7RTgNKjH8beCPJATDK13CGqfFM2q/pI09BSO0vBXFnQexNLKaoDVy10ls85NLfup5F6OENhSn70=
+    secure: U8z+dkIVizUUUY6ptk2wVmeEcEcjlKIjy2rxk0IEF//IkvBkAusPfOHLyKALKgijaL0zBBbcWv0wbvwCDOf+1RIl85LtBjwjofCdEyw7m31bGVQvz1FTNe/gbJ5IjZmKJ9VxV8HC3hvjj5LQHXZCw+Et/68tcrJNm7dvF7nrM+QNOzPRBRF84sgLZgL6ExYHpzUhCfnlpCZP/Nr/amdoQlZ650V6K+Ew+JtR3I5FyUXZgJYGkWb1LUSl2ViheTV6ncrcBv4bW1gmYVPqEOTVJSYHqFv3g4Bf+I7Sp6D6AN/uyvIErgCEfAkMOLOL8ExIFN3oiznqI8E7vTMtZ2hzHbxlent8g30u8aa4C4mGIwxakJ8d+XhT9YYaTE1/kB5YCkRjAtFoN3PQovabR7rJuoJq0ClCrfsHihHtACreWmDOTAFB1DPbbSb6EscEbjORyz0et736d/sVCMiK7AL0Ho0s1uTDlgWvI9aWoHjfWZKxhSIZiXu3Ygg/Po9nrb6RU+RYWYhQWlf5myYEOIikLjSiYty2SPqH9p/ZdZZzwAFYhMUacW9MHmhNlfHs0Mmb1X18MCB6QDYGI+H8yVcwx7JTQVdv5d2E+x/fTpk5yzMjQsyzvk2Ubesg0o9PzKNiDNEILV5qdfZP+DtkbLi1/Wq7O9UslxdBUGdqHedQraY=
+
 go:
 - 1.6
 - 1.7
+
 install:
 - go get golang.org/x/tools/cmd/cover
 - go get github.com/modocache/gover
 - go get github.com/mattn/goveralls
 - curl https://glide.sh/get | sh && glide i
+
 script:
-- go test -cover -coverpkg github.com/drgomesp/gogo/src/generator -coverprofile generator.profile
-  ./tests/generator
+- go test -cover -coverpkg github.com/drgomesp/gogo/src/generator -coverprofile generator.coverprofile ./tests/generator
+
 after_script:
-- gover ./src
+- gover
 - goveralls -coverprofile=gover.coverprofile -repotoken $COVERALLS_TOKEN

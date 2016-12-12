@@ -1,20 +1,6 @@
-hash: 80913e61247fe8ca5d048defa813f9553f81a0f73a2e2686c2ca38656dd5cbc7
-updated: 2016-12-12T20:48:16.391010181+04:00
-imports:
-- name: github.com/mattn/goveralls
-  version: 9d621f6940639bf287ecbb6f585a2c26eeba3bbe
-- name: github.com/modocache/gover
-  version: aa22dbc29cc3a3dd1b68362e8ab36c0472636bf6
-- name: github.com/smartystreets/goconvey
-  version: 3c2572876754c4669ae7417b219f0b30a29b32c7
-  subpackages:
-  - convey
-  - convey/gotest
-  - convey/reporting
-- name: golang.org/x/tools
-  version: c2ef61f450233d3c629ade8eb2083e43fa75c97a
-  subpackages:
-  - cmd/cover
+hash: 4964fa158d6b5854651c00e67d36bafd4a8bb25f941606a73d084973ad8d5b74
+updated: 2016-12-12T21:51:35.984492946+04:00
+imports: []
 testImports:
 - name: github.com/gopherjs/gopherjs
   version: 50101461d59f26b13c876f57aab314ce55387671
@@ -27,3 +13,9 @@ testImports:
   subpackages:
   - internal/go-render/render
   - internal/oglematchers
+- name: github.com/smartystreets/goconvey
+  version: d4c757aa9afd1e2fc1832aaab209b5794eb336e1
+  subpackages:
+  - convey
+  - convey/gotest
+  - convey/reporting
