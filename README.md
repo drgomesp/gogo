@@ -1,2 +1,3 @@
 # gogo
-Generate Go code using Go – yeah, you got that right
+
+Generate Go code using Go – yeah, you got that right.

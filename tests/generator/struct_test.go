@@ -11,19 +11,19 @@ import (
 
 func TestGeneratingEmptyStruct(t *testing.T) {
 	Convey("Given a struct generator instance for an empty struct", t, func() {
-		g := &generator.StructGenerator{
+		gen := &generator.StructGenerator{
 			Name: "Foo",
 		}
 
 		Convey("Then an empty struct should be generated correctly", func() {
-			So(g.Generate(), ShouldEqual, `type Foo struct {}`)
+			So(gen.Generate(), ShouldEqual, `type Foo struct {}`)
 		})
 	})
 }
 
 func TestGeneratingStructWithFields(t *testing.T) {
 	Convey("Given a struct generator instance for an empty struct", t, func() {
-		g := &generator.StructGenerator{
+		gen := &generator.StructGenerator{
 			Name: "Foo",
 			Fields: []generator.StructFieldGenerator{
 				generator.StructFieldGenerator{
@@ -42,7 +42,7 @@ func TestGeneratingStructWithFields(t *testing.T) {
 		}
 
 		Convey("Then an empty struct should be generated correctly", func() {
-			So(g.Generate(), ShouldEqual, `type Foo struct {
+			So(gen.Generate(), ShouldEqual, `type Foo struct {
 	FieldA bool
 	FieldB int
 	FieldC string

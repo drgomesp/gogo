@@ -1,3 +1,6 @@
 package: github.com/drgomesp/gogo
 import:
 - package: github.com/smartystreets/goconvey
+- package: github.com/modocache/gover
+- package: github.com/mattn/goveralls
+  version: ~0.0.1

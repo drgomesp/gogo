@@ -1,0 +1,23 @@
+language: go
+sudo: false
+env:
+  global:
+    secure: XmP+4DdDemLkKQcBvupuBQVV6/fGB6aMXPRoQEF976/xLtncC+SigNyIDdUwOm8pTPvaSLugdCKQL5+qQ4kSg2N3w+dpGiUHejjWZetuqyHFdkxKPRFeizMx8hiUXrdyXVcKCcQ70xUWxYYbU88CFH0XXbMT6WT77OElgO9cslt1Ct2duEJT3iVGBXcewxhn9LvLbbAFvG1te4hvX+tOpdBZgPXZWs5BpYsU34qJGtmYTlLA5Nru2S2WdiHTyHalT8Tr+H6AaIet5Hg35++qOVsefWOq1dpuw7KjP2kUh7l4XSjJBQO3q9xbxXvYASNqtxfJFS2ytvphrodQ3mneLpRqBnc3vhg6flnlF+30AHOM/Y7RLYEz+eaGcLo6ikqmu4hyHH4vszFaP9CsWUN8HkWJsJdBVlH7nisAI/7FoxjrbA45WGjOZYA7GO7v66T6iGHZ5sRWIdGUgA5yGfiB99OgisAkFPUyv5wIvAeSpeBN0RdV5S9VQTEy8v2uOrzdB+eat5wwukSppGGcEvaoq946p61sfciZ74+u7YBd3uPq5B6rSF9Unm2GzNB71rhAiw+5YqozAAxg8yFLyY/+j+Gmt/C69lR9/SiFfIjBfhiioi5wlZa/qHmFsP7FjVEXuTFAM7uRRngyW5O48VgoioOB5OSiQaxNK7Ro+w7uzYU=
+go:
+- 1.2
+- 1.3
+- 1.4
+- 1.5
+- 1.6
+- 1.7
+install:
+- go get golang.org/x/tools/cmd/cover
+- go get github.com/modocache/gover
+- go get github.com/mattn/goveralls
+- go get -v -t ./...
+script:
+- go test -cover -coverpkg github.com/drgomesp/gogo/src/generator -coverprofile generator.profile
+  ./tests/generator
+after_script:
+- gover
+- goveralls -coverprofile=gover.coverprofile -repotoken $COVERALLS_TOKEN
