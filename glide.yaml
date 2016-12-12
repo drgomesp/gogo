@@ -1,0 +1,3 @@
+package: github.com/drgomesp/gogo
+import:
+- package: github.com/smartystreets/goconvey
