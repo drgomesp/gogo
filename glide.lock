@@ -1,5 +1,5 @@
-hash: 5c9273474f525dc42e26444d44538b5896f2f32b15fed1e1d3497b82a952e0ec
-updated: 2016-12-12T20:29:59.375827608+04:00
+hash: 80913e61247fe8ca5d048defa813f9553f81a0f73a2e2686c2ca38656dd5cbc7
+updated: 2016-12-12T20:48:16.391010181+04:00
 imports:
 - name: github.com/mattn/goveralls
   version: 9d621f6940639bf287ecbb6f585a2c26eeba3bbe
@@ -11,6 +11,10 @@ imports:
   - convey
   - convey/gotest
   - convey/reporting
+- name: golang.org/x/tools
+  version: c2ef61f450233d3c629ade8eb2083e43fa75c97a
+  subpackages:
+  - cmd/cover
 testImports:
 - name: github.com/gopherjs/gopherjs
   version: 50101461d59f26b13c876f57aab314ce55387671

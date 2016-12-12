@@ -4,3 +4,6 @@ import:
 - package: github.com/modocache/gover
 - package: github.com/mattn/goveralls
   version: ~0.0.1
+- package: golang.org/x/tools
+  subpackages:
+  - cmd/cover
