@@ -7,6 +7,7 @@ import (
 	"reflect"
 
 	"github.com/drgomesp/gogo/src/generator"
+	"github.com/drgomesp/gogo/src/meta"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
@@ -28,10 +29,10 @@ func TestGenerateEmptyMethodWithParameters(t *testing.T) {
 		gen := &generator.StructMethodGenerator{
 			Receiver: "ReceiverStructName",
 			Name:     "MethodName",
-			Parameters: map[string]reflect.Kind{
-				"first":  reflect.Bool,
-				"second": reflect.Int,
-				"third":  reflect.String,
+			Parameters: []meta.Parameter{
+				meta.Parameter{Name: "first", Type: reflect.Bool},
+				meta.Parameter{Name: "second", Type: reflect.Int},
+				meta.Parameter{Name: "third", Type: reflect.String},
 			},
 		}
 
@@ -46,10 +47,10 @@ func TestGenerateEmptyMethodWithParametersAndSingleReturn(t *testing.T) {
 		gen := &generator.StructMethodGenerator{
 			Receiver: "ReceiverStructName",
 			Name:     "MethodName",
-			Parameters: map[string]reflect.Kind{
-				"first":  reflect.Bool,
-				"second": reflect.Int,
-				"third":  reflect.String,
+			Parameters: []meta.Parameter{
+				meta.Parameter{Name: "first", Type: reflect.Bool},
+				meta.Parameter{Name: "second", Type: reflect.Int},
+				meta.Parameter{Name: "third", Type: reflect.String},
 			},
 			Returns: reflect.String,
 		}
@@ -65,14 +66,14 @@ func TestGenerateEmptyMethodWithParametersAndDoubleReturn(t *testing.T) {
 		gen := &generator.StructMethodGenerator{
 			Receiver: "ReceiverStructName",
 			Name:     "MethodName",
-			Parameters: map[string]reflect.Kind{
-				"first":  reflect.Bool,
-				"second": reflect.Int,
-				"third":  reflect.String,
+			Parameters: []meta.Parameter{
+				meta.Parameter{Name: "first", Type: reflect.Bool},
+				meta.Parameter{Name: "second", Type: reflect.Int},
+				meta.Parameter{Name: "third", Type: reflect.String},
 			},
-			Returns: map[string]reflect.Kind{
-				"first":  reflect.Bool,
-				"second": reflect.Int,
+			Returns: []meta.Parameter{
+				meta.Parameter{Name: "first", Type: reflect.Bool},
+				meta.Parameter{Name: "second", Type: reflect.Int},
 			},
 		}
 
