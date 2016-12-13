@@ -8,6 +8,14 @@
 [![Build Status][build_badge]][build] 
 [![Coverage Status][coverage_badge]][coverage]
 
+# Table of Contents
+
+1. [Introduction](#Introduction)
+
+## Introduction
+
+
+
 by **[Daniel Ribeiro](https://twitter.com/drgomesp)**
 
 [license]: https://opensource.org/licenses/MIT
