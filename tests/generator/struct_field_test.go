@@ -10,7 +10,7 @@ import (
 
 func TestGenerateField(t *testing.T) {
 	Convey("Given a struct field generator instance", t, func() {
-		gen := &generator.StructFieldGenerator{
+		gen := generator.StructFieldGenerator{
 			Name: "FieldA",
 			Kind: reflect.Bool,
 		}

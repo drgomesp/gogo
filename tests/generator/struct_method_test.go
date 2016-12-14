@@ -13,7 +13,7 @@ import (
 
 func TestGenerateEmptyMethod(t *testing.T) {
 	Convey("Given a struct field generator instance", t, func() {
-		gen := &generator.StructMethodGenerator{
+		gen := generator.StructMethodGenerator{
 			Receiver: "ReceiverStructName",
 			Name:     "MethodName",
 		}
@@ -26,7 +26,7 @@ func TestGenerateEmptyMethod(t *testing.T) {
 
 func TestGenerateEmptyMethodWithParameters(t *testing.T) {
 	Convey("Given a struct field generator instance", t, func() {
-		gen := &generator.StructMethodGenerator{
+		gen := generator.StructMethodGenerator{
 			Receiver: "ReceiverStructName",
 			Name:     "MethodName",
 			Parameters: []meta.Parameter{
@@ -44,7 +44,7 @@ func TestGenerateEmptyMethodWithParameters(t *testing.T) {
 
 func TestGenerateEmptyMethodWithParametersAndSingleReturn(t *testing.T) {
 	Convey("Given a struct field generator instance", t, func() {
-		gen := &generator.StructMethodGenerator{
+		gen := generator.StructMethodGenerator{
 			Receiver: "ReceiverStructName",
 			Name:     "MethodName",
 			Parameters: []meta.Parameter{
@@ -63,7 +63,7 @@ func TestGenerateEmptyMethodWithParametersAndSingleReturn(t *testing.T) {
 
 func TestGenerateEmptyMethodWithParametersAndDoubleReturn(t *testing.T) {
 	Convey("Given a struct field generator instance", t, func() {
-		gen := &generator.StructMethodGenerator{
+		gen := generator.StructMethodGenerator{
 			Receiver: "ReceiverStructName",
 			Name:     "MethodName",
 			Parameters: []meta.Parameter{
