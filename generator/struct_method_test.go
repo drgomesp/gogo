@@ -1,4 +1,4 @@
-package tests
+package generator
 
 import (
 	"fmt"
@@ -6,14 +6,13 @@ import (
 
 	"reflect"
 
-	"github.com/drgomesp/gogo/src/generator"
-	"github.com/drgomesp/gogo/src/meta"
+	"github.com/drgomesp/gogo/meta"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
 func TestGenerateEmptyMethod(t *testing.T) {
 	Convey("Given a struct field generator instance", t, func() {
-		gen := generator.StructMethodGenerator{
+		gen := StructMethodGenerator{
 			Receiver: "ReceiverStructName",
 			Name:     "MethodName",
 		}
@@ -26,7 +25,7 @@ func TestGenerateEmptyMethod(t *testing.T) {
 
 func TestGenerateEmptyMethodWithParameters(t *testing.T) {
 	Convey("Given a struct field generator instance", t, func() {
-		gen := generator.StructMethodGenerator{
+		gen := StructMethodGenerator{
 			Receiver: "ReceiverStructName",
 			Name:     "MethodName",
 			Parameters: []meta.Parameter{
@@ -44,7 +43,7 @@ func TestGenerateEmptyMethodWithParameters(t *testing.T) {
 
 func TestGenerateEmptyMethodWithParametersAndSingleReturn(t *testing.T) {
 	Convey("Given a struct field generator instance", t, func() {
-		gen := generator.StructMethodGenerator{
+		gen := StructMethodGenerator{
 			Receiver: "ReceiverStructName",
 			Name:     "MethodName",
 			Parameters: []meta.Parameter{
@@ -63,7 +62,7 @@ func TestGenerateEmptyMethodWithParametersAndSingleReturn(t *testing.T) {
 
 func TestGenerateEmptyMethodWithParametersAndDoubleReturn(t *testing.T) {
 	Convey("Given a struct field generator instance", t, func() {
-		gen := generator.StructMethodGenerator{
+		gen := StructMethodGenerator{
 			Receiver: "ReceiverStructName",
 			Name:     "MethodName",
 			Parameters: []meta.Parameter{

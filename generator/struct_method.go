@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/drgomesp/gogo/src/meta"
+	"github.com/drgomesp/gogo/meta"
 )
 
 // StructMethodGenerator is a helper for generating struct methods

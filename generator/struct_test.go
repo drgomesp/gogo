@@ -1,18 +1,17 @@
-package tests
+package generator
 
 import (
 	"testing"
 
 	"reflect"
 
-	"github.com/drgomesp/gogo/src/generator"
-	"github.com/drgomesp/gogo/src/meta"
+	"github.com/drgomesp/gogo/meta"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
 func TestGeneratingEmptyStruct(t *testing.T) {
 	Convey("Given a struct generator instance for an empty struct", t, func() {
-		gen := generator.StructGenerator{
+		gen := StructGenerator{
 			Name: "Foo",
 		}
 
@@ -24,18 +23,18 @@ func TestGeneratingEmptyStruct(t *testing.T) {
 
 func TestGeneratingStructWithFields(t *testing.T) {
 	Convey("Given a struct generator instance for a struct with fields", t, func() {
-		gen := generator.StructGenerator{
+		gen := StructGenerator{
 			Name: "Foo",
-			Fields: []generator.StructFieldGenerator{
-				generator.StructFieldGenerator{
+			Fields: []StructFieldGenerator{
+				StructFieldGenerator{
 					Name: "FieldA",
 					Kind: reflect.Bool,
 				},
-				generator.StructFieldGenerator{
+				StructFieldGenerator{
 					Name: "FieldB",
 					Kind: reflect.Int,
 				},
-				generator.StructFieldGenerator{
+				StructFieldGenerator{
 					Name: "FieldC",
 					Kind: reflect.String,
 				},
@@ -54,10 +53,10 @@ func TestGeneratingStructWithFields(t *testing.T) {
 
 func TestGeneratingStructWithMethods(t *testing.T) {
 	Convey("Given a struct generator instance for struct with methods", t, func() {
-		gen := generator.StructGenerator{
+		gen := StructGenerator{
 			Name: "Foo",
-			Methods: []generator.StructMethodGenerator{
-				generator.StructMethodGenerator{
+			Methods: []StructMethodGenerator{
+				StructMethodGenerator{
 					Name: "Bar",
 					Parameters: []meta.Parameter{
 						meta.Parameter{Name: "first", Type: reflect.Bool},
@@ -82,24 +81,24 @@ func (r *Foo) Bar(first bool, second int, third string) (first bool, second int)
 
 func TestGeneratingStructWithFieldsAndMethods(t *testing.T) {
 	Convey("Given a struct generator instance for struct with fields and methods", t, func() {
-		gen := generator.StructGenerator{
+		gen := StructGenerator{
 			Name: "Foo",
-			Fields: []generator.StructFieldGenerator{
-				generator.StructFieldGenerator{
+			Fields: []StructFieldGenerator{
+				StructFieldGenerator{
 					Name: "FieldA",
 					Kind: reflect.Bool,
 				},
-				generator.StructFieldGenerator{
+				StructFieldGenerator{
 					Name: "FieldB",
 					Kind: reflect.Int,
 				},
-				generator.StructFieldGenerator{
+				StructFieldGenerator{
 					Name: "FieldC",
 					Kind: reflect.String,
 				},
 			},
-			Methods: []generator.StructMethodGenerator{
-				generator.StructMethodGenerator{
+			Methods: []StructMethodGenerator{
+				StructMethodGenerator{
 					Name: "Bar",
 					Parameters: []meta.Parameter{
 						meta.Parameter{Name: "first", Type: reflect.Bool},
