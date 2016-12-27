@@ -16,7 +16,7 @@ install:
 - curl https://glide.sh/get | sh && glide i
 
 script:
-- go test -cover -coverpkg github.com/drgomesp/gogo/src/generator -coverprofile generator.coverprofile ./tests/generator
+- go test -cover -coverpkg github.com/drgomesp/gogo/generator -coverprofile generator.coverprofile ./generator
 
 after_script:
 - gover
