@@ -10,10 +10,6 @@ go:
 - 1.7
 - tip
 
-install:
-- mkdir $GOPATH/bin && export GOBIN=$GOPATH/bin
-- curl https://glide.sh/get | sh && glide i
-
 script:
 - go test -cover -coverpkg github.com/drgomesp/gogo/generator -coverprofile generator.coverprofile ./generator
 
