@@ -11,7 +11,6 @@ go:
 - tip
 
 install:
-- go get -t ./...
 - curl https://glide.sh/get | sh && glide i
 
 script:
