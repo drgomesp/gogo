@@ -11,6 +11,7 @@ go:
 - tip
 
 install:
+- mkdir $GOPATH/bin && export GOBIN=$GOPATH/bin
 - curl https://glide.sh/get | sh && glide i
 
 script:
